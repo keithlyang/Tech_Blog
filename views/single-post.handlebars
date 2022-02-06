@@ -1,0 +1,25 @@
+{{!-- {{> post-info post}} --}}
+
+{{#if loggedIn}} 
+<form class="comment-form">
+  <div>
+    <textarea class="ml-5" name="comment-body"></textarea>
+  </div>
+
+  <div>
+    <button class="button is-warning ml-5 mb-5" type="submit">Comment</button>
+  </div>
+  
+</form>
+{{/if}}
+<h1>This is a single post:</h1>
+<h2>{{post.title}}</h2>
+{{#each post.comments}}
+  <p>{{comment_text}}</p>
+{{/each}}
+
+{{!-- {{> comments post.comments}} --}}
+
+{{#if loggedIn}}
+<script src="/javascript/comment.js"></script>
+{{/if}}
